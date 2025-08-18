@@ -4,8 +4,10 @@ scikit-learn
 matplotlib
 seaborn
 dvc
-great_expectations
 mlflow
 pytest
 black
 flake8
+httpx
+prometheus-fastapi-instrumentator
+structlog

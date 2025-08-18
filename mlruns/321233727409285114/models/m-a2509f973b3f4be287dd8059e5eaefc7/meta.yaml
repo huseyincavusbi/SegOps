@@ -1,0 +1,10 @@
+artifact_location: file:///Users/hc/Documents/uber/uber-customer-segmentation/mlruns/321233727409285114/models/m-a2509f973b3f4be287dd8059e5eaefc7/artifacts
+creation_timestamp: 1755537669365
+experiment_id: '321233727409285114'
+last_updated_timestamp: 1755537670903
+model_id: m-a2509f973b3f4be287dd8059e5eaefc7
+model_type: null
+name: minibatch_kmeans_model
+source_run_id: bcca27d7bd0e4a3c90a5b2d37831a644
+status: 2
+status_message: null

@@ -1,26 +1,72 @@
-# Uber Customer Segmentation Project
 
-This project aims to segment Uber customers based on their ride patterns using robust, production-ready machine learning workflows. It follows MLOps and DevOps best practices for scalability, maintainability, and reproducibility.
+# SegOps: Customer Segmentation with MLOps/DevOps
 
-## Structure
-- `data/`: Raw and processed data (not tracked by git)
-- `notebooks/`: Jupyter notebooks for EDA and prototyping
-- `src/`: Source code (feature engineering, training, inference)
-- `tests/`: Unit and integration tests
-- `scripts/`: CLI scripts for automation
-- `configs/`: Configuration files
+SegOps is a production-grade platform for customer segmentation, analytics, and MLOps/DevOps best practices. It enables scalable, reproducible machine learning workflows, robust monitoring, and rapid deployment for real-world segmentation use cases.
 
-## Getting Started
-1. Clone the repo
-2. Install dependencies: `pip install -r requirements.txt`
-3. Explore notebooks or run scripts
+## Features
+- **Data**: The project uses Uber ride booking data (e.g., `ncr_ride_bookings.csv`) containing anonymized trip records, timestamps, locations, and customer attributes. This data is used for exploratory analysis, feature engineering, and clustering. All data is versioned with DVC for reproducibility. See the `data/` directory for details. 
+	- Source: [Kaggle - Uber Ride Analytics Dashboard](https://www.kaggle.com/datasets/yashdevladdha/uber-ride-analytics-dashboard)
+- Automated customer segmentation using MiniBatch KMeans
+- Modular, reusable feature engineering pipeline
+- REST API (FastAPI) for real-time inference
+- Batch prediction scripts
+- Full MLOps/DevOps stack: experiment tracking, CI/CD, containerization, monitoring
+- Data and model versioning
 
-## MLOps Tools
-- Data versioning: DVC
-- Experiment tracking: MLflow
-- CI/CD: GitHub Actions
-- Containerization: Docker
+## Project Structure
+```
+├── data/           # Raw, processed data, and model artifacts (DVC tracked)
+├── notebooks/      # EDA, prototyping (Jupyter)
+├── src/
+│   ├── api/        # FastAPI app (serve_clusters.py)
+│   ├── features/   # Feature engineering pipeline
+│   ├── models/     # Model training scripts
+│   └── utils/      # Utilities
+├── tests/          # Unit/integration/model validation tests
+├── scripts/        # Automation scripts (e.g., batch prediction)
+├── Dockerfile      # Multi-arch compatible
+├── docker-compose.yml
+├── requirements.txt
+├── prometheus.yml
+├── README.md
+```
 
----
+## Tech Stack & Tools
+- **Python 3.11**, pandas, scikit-learn, joblib
+- **FastAPI** (REST API)
+- **DVC** (data/model versioning)
+- **MLflow** (experiment tracking)
+- **pytest** (testing)
+- **Docker & Docker Compose** (multi-arch containerization)
+- **Prometheus & Grafana** (monitoring & dashboards)
+- **GitHub Actions** (CI/CD)
 
-For more details, see the documentation in each folder.
+## Quickstart
+### Docker Image
+Multi-architecture image: [huseyincavus/segops on Docker Hub](https://hub.docker.com/r/huseyincavus/segops)
+
+
+### 1. Local Development
+```sh
+git clone https://github.com/huseyincavusbi/SegOps.git
+cd SegOps
+pip install -r requirements.txt
+# Run API locally
+uvicorn src.api.serve_clusters:app --reload
+```
+
+### 2. Run with Docker Compose (Recommended)
+```sh
+docker-compose up --build
+# Access API: http://localhost:8000/docs
+# Prometheus: http://localhost:9090
+# Grafana: http://localhost:3000
+```
+
+### 3. Build Multi-Arch Docker Image
+```sh
+docker buildx build --platform linux/amd64,linux/arm64 -t yourusername/segops:latest --push .
+```
+
+## License
+MIT License. See `LICENSE` for details.

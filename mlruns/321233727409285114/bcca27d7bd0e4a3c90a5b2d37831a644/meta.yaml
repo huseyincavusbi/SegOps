@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hc/Documents/uber/uber-customer-segmentation/mlruns/321233727409285114/bcca27d7bd0e4a3c90a5b2d37831a644/artifacts
+end_time: 1755537671166
+entry_point_name: ''
+experiment_id: '321233727409285114'
+lifecycle_stage: active
+run_id: bcca27d7bd0e4a3c90a5b2d37831a644
+run_name: exultant-goat-484
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755537635202
+status: 3
+tags: []
+user_id: hc
