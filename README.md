@@ -36,7 +36,6 @@ SegOps is a production-grade platform for customer segmentation, analytics, and 
 ├── docker-compose.yml
 ├── notebooks/                   # Jupyter notebooks
 │   ├── cluster_profiling.ipynb
-│   ├── data_validation_gx.ipynb
 │   └── uber_eda.ipynb
 ├── prometheus.yml
 ├── requirements.txt
