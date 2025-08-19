@@ -3,6 +3,8 @@ from sklearn.cluster import MiniBatchKMeans
 from sklearn.metrics import silhouette_score
 from src.features.feature_pipeline import build_feature_pipeline
 
+import os
+os.environ["MLFLOW_TRACKING_URI"] = "file:./mlruns"
 import mlflow
 import mlflow.sklearn
 
