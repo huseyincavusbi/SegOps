@@ -2,9 +2,12 @@ import pandas as pd
 from sklearn.cluster import MiniBatchKMeans
 from sklearn.metrics import silhouette_score
 from src.features.feature_pipeline import build_feature_pipeline
+
 import mlflow
 import mlflow.sklearn
 
+# Ensure MLflow uses a local directory for tracking and artifacts (works in CI/CD)
+mlflow.set_tracking_uri("file:./mlruns")
 mlflow.set_experiment("uber-customer-segmentation")
 
 # Load data
