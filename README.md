@@ -15,20 +15,50 @@ SegOps is a production-grade platform for customer segmentation, analytics, and 
 
 ## Project Structure
 ```
-├── data/           # Raw, processed data, and model artifacts (DVC tracked)
-├── notebooks/      # EDA, prototyping (Jupyter)
-├── src/
-│   ├── api/        # FastAPI app (serve_clusters.py)
-│   ├── features/   # Feature engineering pipeline
-│   ├── models/     # Model training scripts
-│   └── utils/      # Utilities
-├── tests/          # Unit/integration/model validation tests
-├── scripts/        # Automation scripts (e.g., batch prediction)
-├── Dockerfile      # Multi-arch compatible
-├── docker-compose.yml
-├── requirements.txt
-├── prometheus.yml
+├── .dvc/                        # DVC metadata and cache
+├── .dvcignore                   # DVC ignore file
+├── .git/                        # Git metadata
+├── .github/                     # GitHub Actions/workflows
+│   └── workflows/
+├── .gitignore
+├── .pytest_cache/               # pytest cache
+├── Dockerfile                   # Multi-arch Docker build
 ├── README.md
+├── data/                        # Data and model artifacts
+│   ├── chunks_head/
+│   ├── feature_pipeline.joblib
+│   ├── minibatch_kmeans_clusters.csv
+│   ├── minibatch_kmeans_model.joblib
+│   ├── ncr_ride_bookings.csv
+│   ├── ncr_ride_bookings.csv.dvc
+│   ├── queries.active
+│   └── wal/
+├── docker-compose.yml
+├── notebooks/                   # Jupyter notebooks
+│   ├── cluster_profiling.ipynb
+│   ├── data_validation_gx.ipynb
+│   └── uber_eda.ipynb
+├── prometheus.yml
+├── requirements.txt
+├── scripts/                     # Automation scripts
+│   └── run_batch_prediction.sh
+├── setup.py
+├── src/                         # Source code
+│   ├── api/
+│   ├── features/
+│   ├── models/
+│   └── utils/
+├── tests/                       # Unit/integration/model validation tests
+│   ├── __pycache__/
+│   ├── test_api.py
+│   ├── test_data_sample.csv
+│   ├── test_feature_pipeline.py
+│   ├── test_feature_pipeline_all_expected_features.py
+│   ├── test_feature_pipeline_categorical_encoding.py
+│   ├── test_feature_pipeline_handles_missing_values.py
+│   ├── test_feature_pipeline_output_shape_and_type.py
+│   ├── test_model_validation.py
+│   └── test_training_pipeline_integration.py
 ```
 
 ## Tech Stack & Tools

@@ -29,7 +29,6 @@ var/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-notebooks/*.ipynb
 
 # Data files
 *.csv
