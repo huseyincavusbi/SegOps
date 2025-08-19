@@ -1,3 +1,6 @@
+# Test data
+!tests/test_data_sample.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -31,6 +34,7 @@ notebooks/*.ipynb
 # Data files
 *.csv
 data/*.csv
+!data/ncr_ride_bookings.csv
 !data/*.dvc
 !data/*.dvc
 
