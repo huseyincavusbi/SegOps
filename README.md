@@ -46,8 +46,7 @@ SegOps is a production-grade platform for customer segmentation, analytics, and 
 ├── src/                         # Source code
 │   ├── api/
 │   ├── features/
-│   ├── models/
-│   └── utils/
+│   └── models/
 ├── tests/                       # Unit/integration/model validation tests
 │   ├── __pycache__/
 │   ├── test_api.py
